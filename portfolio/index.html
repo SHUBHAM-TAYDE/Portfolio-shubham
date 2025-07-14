@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-lg py-4 px-6 fixed w-full z-10 rounded-b-xl">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-teal-600 rounded-lg p-2 hover:bg-teal-50 transition duration-300 transform hover:scale-105">Shubham Tayde</a>
+            <div class="flex items-center space-x-4">
+                <a href="#home" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Home</a>
+                <a href="#skills" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Skills</a>
+                <a href="#blog" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Blog</a>
+                <a href="#projects" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">Projects</a>
+                <a href="#about" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg p-2 hover:bg-gray-100">About</a>
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 border border-gray-400 dark:border-gray-500 cursor-pointer">
+                    <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-4.325l-.707-.707M6.382 17.382l-.707-.707M17.382 6.382l.707-.707M6.382 6.382l-.707.707M12 18a6 6 0 100-12 6 6 0 000 12z"></path></svg>
+                    <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-8">
+        <!-- Home Section (formerly Hero Section) -->
+        <section id="home" class="page-section bg-gradient-to-r from-teal-500 to-cyan-600 text-white py-20 md:py-32 rounded-b-3xl mx-4 mt-4 shadow-2xl">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-center md:space-x-12">
+                <!-- Text Content -->
+                <div class="md:w-1/2 text-center order-2 md:order-1">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight hero-text-shadow">Hi, I'm <span class="text-amber-300">Shubham Tayde</span>!</h1>
+                    <p class="text-xl md:text-2xl mb-8 hero-text-shadow">I simplify complex deployments with automation — ensuring faster delivery and reliable infrastructure.</p>
+                    <a href="#projects" class="bg-white text-teal-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-110">Explore My Automation Projects</a>
+                </div>
+                <!-- Image Content with Flip -->
+                <div class="md:w-1/2 flex flex-col items-center justify-center order-1 md:order-2 mt-8 md:mt-0 relative">
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl dashed-border w-full max-w-sm" style="height: 500px;">
+                        <div class="flipper-container h-full">
+                            <div id="image-flipper" class="flipper h-full">
+                                <div class="front h-full">
+                                    <img id="current-image" src="assets/images/shubham_linkedin.jpeg.jpg" alt="Shubham Tayde Profile Picture" class="flipper-image">
+                                </div>
+                                <div class="back h-full">
+                                    <img id="next-image-preload" src="assets/images/blog_post.png" alt="Shubham Tayde Profile Picture" class="flipper-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Waving hand emoji in a circle, positioned on the left vertical border, vertically centered -->
+                    <div class="emoji-circle absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="text-3xl text-yellow-400 emoji-shadow animate-wave">👋</span>
+                    </div>
+                    <!-- The "Next Photo" button is removed for automatic flipping -->
+                </div>
+            </div>
+
+            <!-- Summarized Sections -->
+            <div class="container mx-auto px-6 mt-16 text-gray-800 dark:text-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-12 text-white hero-text-shadow">Quick Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Summarized About -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-teal-600">About Me</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">I’m passionate about simplifying workflows, automating delivery pipelines, and building resilient, scalable infrastructure — that’s what drives my DevOps journey.</p>
+                        <a href="#about" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-full hover:bg-teal-600 transition duration-300 text-sm">Learn More</a>
+                    </div>
+                    <!-- Summarized Skills -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-teal-600">My Expertise</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">I specialize in building CI/CD pipelines, automating infrastructure with IaC, containerizing applications, and architecting reliable cloud infrastructure.</p>
+                        <a href="#skills" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-full hover:bg-teal-600 transition duration-300 text-sm">View All Skills</a>
+                    </div>
+                    <!-- Summarized Projects -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-teal-600">Automation in Action</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">Projects that reflect my DevOps mindset — leveraging automation to streamline delivery, enhance reliability, and scale effortlessly.</p>
+                        <a href="#projects" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-full hover:bg-teal-600 transition duration-300 text-sm">View All Projects</a>
+                    </div>
+                    <!-- Summarized Blog -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <h3 class="text-xl font-semibold mb-2 text-teal-600">DevOps Insights</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">I write about real-world DevOps practices, automation strategies, tool comparisons, and tips that make systems efficient and teams productive.</p>
+                        <a href="#blog" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-full hover:bg-teal-600 transition duration-300 text-sm">Read My Blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section py-16 md:py-24 bg-white rounded-xl shadow-xl mx-4 mt-8 px-6">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-teal-600">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                    <div class="md:w-full text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        <p class="mb-4">
+                            Hi 👋 I’m a DevOps Engineer based in Nagpur, India, helping teams deliver faster and more reliably through automation.
+                        </p>
+                        <p class="mb-4">
+                            I streamline development workflows, automate delivery pipelines, and build scalable, resilient infrastructure that supports continuous delivery.
+                        </p>
+                        <p class="mb-4">
+                            I believe automation is the key to building better software — faster, smarter, and with confidence.
+                        </p>
+                        <p>
+                            I regularly work with tools like Docker, Kubernetes, Jenkins, GitHub Actions, Terraform, and AWS, and I’m always exploring new ways to deliver value through DevOps best practices and infrastructure as code.
+                        </p>
+                    </div>
+                    <!-- The image related to "Automation in Action" has been removed from here -->
+                </div>
+
+                <!-- New Experience Section within About -->
+                <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold text-center mb-8 text-teal-600">My Experience</h3>
+                    <div class="space-y-8">
+                        <!-- Experience 1: Network Engineer -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 dark:bg-teal-700 dark:text-teal-100 font-bold text-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.29 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">SEPTEMBER 2023 • PRESENT</p>
+                                <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Network Engineer</h4>
+                                <p class="text-teal-600 font-medium mb-2">Bhartiya Jain Sanghatana</p>
+                                <p class="text-gray-600 dark:text-gray-300">Designed and automated 20+ cloud environments using Terraform, implemented CI/CD with Jenkins and GitHub Actions, and deployed Dockerized microservices to Kubernetes—boosting deployment speed by 30%, efficiency by 25%, and ensuring 99.9% uptime.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience 2: DevOps Community Volunteer -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 dark:bg-orange-700 dark:text-orange-100 font-bold text-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h2a2 2 0 002-2V8a2 2 0 00-2-2h-2M13 3v1m0 16v1m-9-9H3m18 0h-1M6 12a6 6 0 1112 0 6 6 0 01-12 0z"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">MAY 2025 • PRESENT</p>
+                                <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">DevOps Community Volunteer</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Hosted weekly Discord sessions on DevOps, Cloud, SRE, and HomeLab setups while actively engaging with learners, resolving doubts, contributing educational content, and collaborating with volunteers to drive impactful community initiatives.</p>
+                            </div>
+                        </div>
+
+                        <!-- Experience 3: System Administrator -->
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 dark:bg-gray-700 dark:text-gray-200 font-bold text-lg">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">MARCH 2022 • SEPTEMBER 2023</p>
+                                <h4 class="text-xl font-semibold text-gray-800 dark:text-gray-100">System Administrator</h4>
+                                <p class="text-teal-600 font-medium mb-2">Shro System (Client Location : Bhartiya Jain Sanghatana)</p>
+                                <p class="text-gray-600 dark:text-gray-300">Handled AWS cloud services and application hosting while managing and maintaining infrastructure to ensure system stability, security, and optimal performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Let's Connect Section -->
+                <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-teal-600">Let's Connect</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        If you want to stay up to date with my work, be sure to
+                        <a href="https://twitter.com/your_twitter_handle" target="_blank" class="text-blue-500 hover:underline font-medium">follow me on Twitter</a>,
+                        or you can send me an
+                        <a href="mailto:tayde.s.shubham@gmail.com" class="text-blue-500 hover:underline font-medium">email</a>
+                        and I'll be sure to get back to you.
+                    </p>
+                    <!-- Download Resume Button -->
+                    <a href="assets/docs/Shubham_Tayde_Resume.pdf" download="Shubham_Tayde_Resume.pdf" class="inline-flex items-center bg-teal-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-teal-700 transition duration-300 transform hover:scale-105 mt-6">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="page-section py-16 md:py-24 bg-gray-100 rounded-xl shadow-xl mx-4 mt-8 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-teal-600">My DevOps Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- Skill Card 1: CI/CD & Automation -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">CI/CD & Automation</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Jenkins, GitLab CI/CD, GitHub Actions</li>
+                            <li>Automated Testing (Unit, Integration)</li>
+                            <li>Scripting for Automation (Bash, Python)</li>
+                            <li>Configuration Management (Ansible)</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card 2: Cloud & Infrastructure -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Cloud & Infrastructure</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>AWS (EC2, S3, Lambda, VPC)</li>
+                            <li>Infrastructure as Code (Terraform, CloudFormation)</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card 3: Containerization & Orchestration -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Containerization & Orchestration</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Docker</li>
+                            <li>Kubernetes (K8s)</li>
+                            <li>Helm</li>
+                            <li>Container Registries (Docker Hub, ECR)</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card 4: Monitoring & Logging -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Monitoring & Logging</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Prometheus, Grafana</li>
+                            <li>Alerting & Incident Response</li>
+                        </ul>
+                    </div>
+                    <!-- Skill Card 5: Version Control & Collaboration -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Version Control & Collaboration</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Git, GitHub, GitLab, Bitbucket</li>
+                            <li>Code Review Workflows</li>
+                        </ul>
+
+                    </div>
+                    <!-- Skill Card 6: Networking & Security Basics -->
+                    <div class="bg-white p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Networking & Security Basics</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>TCP/IP, DNS, HTTP/S</li>
+                            <li>Firewalls, Security Groups</li>
+                            <li>Basic Linux Administration</li>
+                            <li>Vulnerability Scanning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Animated Skill Bars Section -->
+                <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold text-center mb-8 text-teal-600">My Skill Proficiency</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <!-- Skill Bar 1: CI/CD -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">CI/CD Pipelines</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="90">90%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="90"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 2: Cloud (AWS) -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">Cloud (AWS)</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="85">85%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="85"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 3: Containerization (Docker/K8s) -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">Containerization (Docker/K8s)</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="80">80%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="80"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 4: Infrastructure as Code (Terraform) -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">Infrastructure as Code (Terraform)</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="75">75%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="75"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 5: Scripting (Bash/Python) -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">Scripting (Bash/Python)</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="70">70%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="70"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 6: Monitoring & Logging -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-lg font-medium text-gray-800 dark:text-gray-200">Monitoring & Logging</span>
+                                <span class="text-sm font-semibold text-teal-600 dark:text-teal-400" data-skill-level="65">65%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-fill" data-level="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="page-section py-16 md:py-24 bg-gray-100 rounded-xl shadow-xl mx-4 mt-8 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-teal-600">My DevOps Insights</h2>
+                <p class="text-center text-lg text-gray-700 dark:text-gray-300 mb-8">
+                    Here you'll find my thoughts, tutorials, and deep dives into the world of DevOps, automation, and cloud technologies.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post: Start Your Linux Journey -->
+                    <div class="bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-100 rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                        <img src="assets/images/blog_post.png" alt="Linux Journey Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-blue-800 dark:text-blue-200">Start Your Linux Journey: Learn Its Past, Power, and Popular Flavors</h3>
+                            <p class="text-blue-700 dark:text-blue-300 text-base leading-relaxed mb-4 flex-grow">This article explores the history, power, and popular distributions of Linux, encouraging readers to begin their journey with this versatile operating system.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 text-purple-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Linux</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Operating System</span>
+                                <span class="bg-green-100 text-green-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Journey</span>
+                            </div>
+                            <a href="https://app.daily.dev/posts/start-your-linux-journey-learn-its-past-power-and-popular-flavors-wz7mxpktk" target="_blank" class="text-blue-600 hover:underline font-medium flex items-center mt-auto">
+                                Read More
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Blog Post: From VM Struggle to Docker Magic -->
+                    <div class="bg-green-50 dark:bg-green-900 text-green-900 dark:text-green-100 rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                        <img src="assets/images/blog_section111.png" alt="Docker Magic Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-green-800 dark:text-green-200">From VM Struggle to Docker Magic: A DevOps Journey</h3>
+                            <p class="text-green-700 dark:text-green-300 text-base leading-relaxed mb-4 flex-grow">Discover how transitioning from traditional virtual machines to Docker containers revolutionized my DevOps workflow, making deployments more efficient and scalable.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Virtual Machines</span>
+                                <span class="bg-green-100 text-green-700 text-xs font-medium px-2.5 py-0.5 rounded-full">DevOps</span>
+                            </div>
+                            <a href="https://from-vm-struggle-to-docker-magic.hashnode.dev/virtual-machine-struggle-to-docker-magic" target="_blank" class="text-green-600 hover:underline font-medium flex items-center mt-auto">
+                                Read More
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post: Build Once, Run Anywhere -->
+                    <div class="bg-purple-50 dark:bg-purple-900 text-purple-900 dark:text-purple-100 rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 flex flex-col">
+                        <img src="assets/images/projects.png" alt="Docker Fundamentals Blog Post Image" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-purple-800 dark:text-purple-200">Build Once, Run Anywhere: Understand Docker Fundamentals Like a Pro</h3>
+                            <p class="text-purple-700 dark:text-purple-300 text-base leading-relaxed mb-4 flex-grow">Dive into the core concepts of Docker, from images and containers to volumes and networks, and master the art of portable application deployment.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Containerization</span>
+                                <span class="bg-teal-100 text-teal-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Fundamentals</span>
+                            </div>
+                            <a href="https://docker-fundamentals-blog-1.hashnode.dev/build-once-run-anywhere-understand-docker-fundamentals-like-a-pro" target="_blank" class="text-purple-600 hover:underline font-medium flex items-center mt-auto">
+                                Read More
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="page-section py-16 md:py-24 bg-white rounded-xl shadow-xl mx-4 mt-8 px-6">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-teal-600">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- New Project Card: Online Shop - Now first -->
+                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <!-- Colored Header Section -->
+                        <div class="bg-blue-600 text-white p-6 text-center flex items-center justify-center h-32">
+                            <h3 class="text-2xl font-bold">Online Shop</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 text-sm mb-4">A modern online shop application showcasing front-end and back-end development with secure user authentication and product management.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                                <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                                <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub</span>
+                                <span class="bg-blue-200 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS</span>
+                            </div>
+                            <div class="flex justify-end items-center">
+                                <a href="https://github.com/SHUBHAM-TAYDE/online_shop/tree/feature/feature-shubham-tayde" target="_blank" class="text-gray-600 hover:text-gray-800 font-medium flex items-center transition duration-300">
+                                    GitHub
+                                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.7c-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.029 1.531 1.029.892 1.529 2.341 1.089 2.91.833.091-.647.35-1.089.636-1.338-2.22-.253-4.555-1.113-4.555-4.954 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.097-2.659 0 0 .84-.27 2.75 1.025A9.436 9.436 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.387.202 2.406.099 2.659.64.7 1.028 1.592 1.028 2.688 0 3.852-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.684.48C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card: EasyShop-Hack - Now second -->
+                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <!-- Colored Header Section -->
+                        <div class="bg-purple-600 text-white p-6 text-center flex items-center justify-center h-32">
+                            <h3 class="text-2xl font-bold">EasyShop-Hack</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 text-sm mb-4">A full-stack e-commerce platform with features like product listings, shopping cart, and user authentication. Focus on scalable architecture and efficient deployment.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 text-purple-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Kubernetes</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Argo CD</span>
+                                <span class="bg-green-100 text-green-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GitOps</span>
+                                <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                                <span class="bg-red-100 text-red-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Jenkins</span>
+                                <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Prometheus</span>
+                                <span class="bg-pink-100 text-pink-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Grafana</span>
+                                <span class="bg-blue-200 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS</span>
+                            </div>
+                            <div class="flex justify-end items-center">
+                                <a href="https://github.com/SHUBHAM-TAYDE/easyshop-hack/tree/shubu-feature-branch" target="_blank" class="text-gray-600 hover:text-gray-800 font-medium flex items-center transition duration-300">
+                                    GitHub
+                                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.7c-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.029 1.531 1.029.892 1.529 2.341 1.089 2.91.833.091-.647.35-1.089.636-1.338-2.22-.253-4.555-1.113-4.555-4.954 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.097-2.659 0 0 .84-.27 2.75 1.025A9.436 9.436 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.387.202 2.406.099 2.659.64.7 1.028 1.592 1.028 2.688 0 3.852-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.684.48C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 1: CI/CD Pipeline Automation - Now third -->
+                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 hover:ring-2 hover:ring-teal-400">
+                        <!-- Colored Header Section -->
+                        <div class="bg-teal-600 text-white p-6 text-center flex items-center justify-center h-32">
+                            <h3 class="text-2xl font-bold">CI/CD Pipeline</h3>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 text-sm mb-4">Developed and implemented a robust CI/CD pipeline using Jenkins and Docker to automate the build, test, and deployment of microservices on Kubernetes.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-teal-100 text-teal-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Jenkins</span>
+                                <span class="bg-orange-100 text-orange-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Docker</span>
+                                <span class="bg-gray-200 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Kubernetes</span>
+                            </div>
+                            <div class="flex justify-end items-center">
+                                <a href="#" target="_blank" class="text-gray-600 hover:text-gray-800 font-medium flex items-center transition duration-300">
+                                    GitHub
+                                    <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.7c-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.029 1.531 1.029.892 1.529 2.341 1.089 2.91.833.091-.647.35-1.089.636-1.338-2.22-.253-4.555-1.113-4.555-4.954 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.097-2.659 0 0 .84-.27 2.75 1.025A9.436 9.436 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.387.202 2.406.099 2.659.64.7 1.028 1.592 1.028 2.688 0 3.852-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.684.48C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Removed Contact Section -->
+    </main>
+
+    <!-- Message Box for form submission feedback -->
+    <div id="message-box" class="message-box"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-xl mx-4 mb-4 shadow-lg">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">&copy; 2025 Shubham Tayde. All rights reserved.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 mt-4 text-sm">
+                <a href="https://github.com/SHUBHAM-TAYDE" target="_blank" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.7c-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.029 1.531 1.029.892 1.529 2.341 1.089 2.91.833.091-.647.35-1.089.636-1.338-2.22-.253-4.555-1.113-4.555-4.954 0-1.096.39-1.988 1.029-2.688-.103-.253-.446-1.272.097-2.659 0 0 .84-.27 2.75 1.025A9.436 9.436 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.025 2.747-1.025.546 1.387.202 2.406.099 2.659.64.7 1.028 1.592 1.028 2.688 0 3.852-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.684.48C20.137 20.19 23 16.425 23 12.017 23 6.484 18.522 2 13 2h-1z" clip-rule="evenodd"></path></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/shubham-tayde2204/" target="_blank" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                    LinkedIn
+                </a>
+                <a href="mailto:tayde.s.shubham@gmail.com" class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                    tayde.s.shubham@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
